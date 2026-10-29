@@ -518,6 +518,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const logout = () => {
     localStorage.removeItem('maeserena_registered_user_active');
     localStorage.removeItem('maeserena_entered_app');
+    localStorage.removeItem('maeserena_user');
+    localStorage.removeItem('graviflow_user');
     setUser({
       ...INITIAL_USER,
       name: 'Visitante',
@@ -527,7 +529,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
     setShowLandingPage(false);
     setActiveTab('inicio');
-    addNotification('Sessão Terminada', 'Até breve no Mãe Serena!', 'milestone');
+    addNotification('Sessão Terminada', 'Sessão encerrada com sucesso no GraviFlow! Redirecionando para login...', 'milestone');
   };
 
   // Register New User

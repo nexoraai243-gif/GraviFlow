@@ -14,6 +14,7 @@ import {
   Activity,
   Plus
 } from 'lucide-react';
+import { FloatingBabyDevelopment } from '../components/FloatingBabyDevelopment';
 
 export const PregnancyTrackerView: React.FC = () => {
   const {
@@ -138,6 +139,24 @@ export const PregnancyTrackerView: React.FC = () => {
             );
           })}
         </div>
+
+        {/* Interactive Growth Slider */}
+        <div className="mt-3 pt-3 border-t border-rose-100 dark:border-[#493642] px-1">
+          <div className="flex items-center justify-between text-xs text-[#796A72] dark:text-[#C8B8C1] mb-1.5 font-semibold">
+            <span className="flex items-center gap-1.5 text-[#A83260] dark:text-[#E878A0]">
+              <Sparkles className="w-3.5 h-3.5" /> Linha do Tempo Fetal (Arrasta para ver o bebé a formar-se e crescer)
+            </span>
+            <span className="font-bold text-[#A83260] dark:text-[#E878A0]">Semana {selectedWeek} de 40</span>
+          </div>
+          <input
+            type="range"
+            min={1}
+            max={40}
+            value={selectedWeek}
+            onChange={(e) => setSelectedWeek(Number(e.target.value))}
+            className="w-full accent-[#A83260] cursor-pointer h-2 bg-rose-100 dark:bg-[#30232D] rounded-lg"
+          />
+        </div>
       </div>
 
       {/* Selected Week Showcase Card */}
@@ -172,19 +191,25 @@ export const PregnancyTrackerView: React.FC = () => {
 
         {/* Baby Size Visual & Measurements */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div className="md:col-span-5 text-center p-6 bg-gradient-to-b from-[#FDF9FA] to-[#F8E7ED]/50 dark:from-[#30232D] dark:to-[#241C23] rounded-3xl border border-rose-100 dark:border-[#493642]">
-            <div className="w-28 h-28 mx-auto rounded-full bg-white dark:bg-[#241C23] shadow-md flex items-center justify-center text-6xl mb-4 border-2 border-rose-200 dark:border-[#493642]">
-              {getFruitIcon(weekInfo.week)}
+          <div className="md:col-span-5 text-center p-6 bg-gradient-to-b from-[#FDF9FA] to-[#F8E7ED]/50 dark:from-[#30232D] dark:to-[#241C23] rounded-3xl border border-rose-100 dark:border-[#493642] flex flex-col items-center">
+            {/* Realistic Animated Floating Baby in the Womb */}
+            <FloatingBabyDevelopment
+              week={selectedWeek}
+              size="standard"
+              showDetailsBadge={false}
+              showHeartbeatSound={true}
+              className="my-2"
+            />
+
+            {/* Equivalence and Developmental Milestone */}
+            <div className="mt-3 inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#30232D] border border-rose-200 dark:border-[#493642] text-xs font-bold text-[#A83260] dark:text-[#E878A0] shadow-xs">
+              <span>{getFruitIcon(weekInfo.week)}</span>
+              <span>Equivalente: {weekInfo.babySizeComparison}</span>
             </div>
-            <p className="text-[10px] font-extrabold uppercase tracking-wider text-[#A83260] dark:text-[#E878A0]">
-              Tamanho Aproximado
-            </p>
-            <h3 className="font-serif-accent font-bold text-xl sm:text-2xl text-[#30232A] dark:text-[#FFF5F8] mt-1">
-              {weekInfo.babySizeComparison}
-            </h3>
-            <p className="text-xs text-[#796A72] dark:text-[#C8B8C1] mt-1">
+
+            <h3 className="font-serif-accent font-bold text-lg sm:text-xl text-[#30232A] dark:text-[#FFF5F8] mt-2">
               {weekInfo.milestoneTitle}
-            </p>
+            </h3>
 
             <div className="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-rose-200/60 dark:border-[#493642]">
               <div className="p-2 bg-white/80 dark:bg-[#30232D] rounded-xl text-center">

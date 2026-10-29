@@ -27,7 +27,8 @@ export const ProfileView: React.FC = () => {
     setActiveQuickModal,
     setActiveTab,
     resetToDemoData,
-    addNotification
+    addNotification,
+    logout
   } = useApp();
 
   const [name, setName] = useState(user.name);
@@ -230,7 +231,7 @@ export const ProfileView: React.FC = () => {
 
           <div className="flex items-center justify-between p-3.5 rounded-2xl bg-neutral-50 dark:bg-[#1E101A] border border-neutral-100 dark:border-[#3B1B2B]">
             <div>
-              <p className="font-bold">Tipo de Conta Mãe Serena</p>
+              <p className="font-bold">Tipo de Conta GraviFlow</p>
               <p className="text-[11px] text-neutral-500">
                 {user.role === 'admin' ? 'Conta de Desenvolvedor (Acesso Total)' : 'Utilizadora Registada'}
               </p>
@@ -253,6 +254,23 @@ export const ProfileView: React.FC = () => {
             >
               <RotateCcw className="w-3.5 h-3.5" />
               Restaurar
+            </button>
+          </div>
+
+          {/* Terminar Sessão - Redireciona para Cadastro e Login */}
+          <div className="flex items-center justify-between p-3.5 rounded-2xl bg-rose-100/60 dark:bg-rose-950/40 border border-rose-300/80 dark:border-rose-900/60">
+            <div>
+              <p className="font-bold text-rose-950 dark:text-rose-100">Terminar Sessão</p>
+              <p className="text-[11px] text-rose-800 dark:text-rose-300">
+                Encerra a sessão da tua conta e regressa à página de cadastro e login.
+              </p>
+            </div>
+            <button
+              onClick={logout}
+              className="px-4 py-2 rounded-xl bg-[#7D2347] hover:bg-[#A83260] text-white font-bold text-xs flex items-center gap-1.5 shrink-0 shadow-md transition-all active:scale-95"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              Terminar Sessão
             </button>
           </div>
         </div>

@@ -85,3 +85,41 @@ h1:hover, h2:hover, h3:hover, h4:hover, p:hover, span:hover, a:hover, label:hove
 .animate-neon-glow {
   animation: neon-pulse-pink 2.5s ease-in-out infinite;
 }
+
+/* Realistic intrauterine floating animation for baby development */
+@keyframes baby-womb-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  28% {
+    transform: translateY(-8px) translateX(3px) rotate(1.8deg);
+  }
+  68% {
+    transform: translateY(6px) translateX(-3.5px) rotate(-1.5deg);
+  }
+}
+
+/* Realistic cardiac contraction thump (Lub-Dub double pulse) */
+@keyframes baby-heart-thump {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  14% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+  26% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  42% {
+    transform: scale(1.22);
+    opacity: 0.96;
+  }
+  58% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+}
+

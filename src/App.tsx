@@ -67,10 +67,10 @@ const MainContent: React.FC = () => {
 
   // Track if user has entered the app experience or prefers the welcome screen
   const [hasEnteredApp, setHasEnteredApp] = useState<boolean>(() => {
-    // Strictly require a real authenticated user (not the visitor placeholder) or completed registration
-    const isRealUser = Boolean(user.email && user.email !== 'ana.domingos@exemplo.ao');
+    // Strictly require a real authenticated user (not the visitor placeholder) and active session
+    const isRealUser = Boolean(user.email && user.email !== 'ana.domingos@exemplo.ao' && user.name !== 'Visitante');
     const isRegisteredActive = localStorage.getItem('maeserena_registered_user_active') === 'true';
-    return isRealUser || isRegisteredActive;
+    return isRealUser && isRegisteredActive;
   });
 
   const handleEnterApp = () => {
@@ -79,12 +79,15 @@ const MainContent: React.FC = () => {
     localStorage.setItem('maeserena_registered_user_active', 'true');
   };
 
-  // Sync state whenever user registers or logs in
+  // Sync state whenever user registers, logs in, or logs out
   React.useEffect(() => {
-    const isRealUser = Boolean(user.email && user.email !== 'ana.domingos@exemplo.ao');
+    const isRealUser = Boolean(user.email && user.email !== 'ana.domingos@exemplo.ao' && user.name !== 'Visitante');
     const isRegisteredActive = localStorage.getItem('maeserena_registered_user_active') === 'true';
-    if (isRealUser || isRegisteredActive) {
+    if (isRealUser && isRegisteredActive) {
       setHasEnteredApp(true);
+    } else {
+      // Whenever session is terminated or user is not authenticated, redirect to WelcomeAuthScreen
+      setHasEnteredApp(false);
     }
   }, [user]);
 

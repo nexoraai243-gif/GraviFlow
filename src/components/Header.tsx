@@ -300,8 +300,8 @@ export const Header: React.FC = () => {
             )}
           </div>
 
-          {/* Admin Panel Button — Developer Access */}
-          {user.role === 'admin' ? (
+          {/* Admin Panel Button — Developer Access Only */}
+          {user.role === 'admin' && (
             <button
               onClick={() => {
                 setShowLandingPage(false);
@@ -312,15 +312,6 @@ export const Header: React.FC = () => {
             >
               <ShieldAlert className="w-3.5 h-3.5 shrink-0" />
               <span>Painel Admin</span>
-            </button>
-          ) : (
-            <button
-              onClick={() => setIsAuthModalOpen(true)}
-              className="hidden sm:flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-semibold border border-rose-200 text-[#70213F] dark:text-[#E878A0] hover:bg-rose-50 dark:hover:bg-[#30232D] transition-colors"
-              title="Entrar com conta de utilizador ou programador"
-            >
-              <LogIn className="w-3.5 h-3.5" />
-              <span>Iniciar Sessão</span>
             </button>
           )}
 
@@ -358,17 +349,6 @@ export const Header: React.FC = () => {
                 </div>
 
                 <div className="py-1">
-                  <button
-                    onClick={() => {
-                      setIsAuthModalOpen(true);
-                      setIsUserMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-1.5 text-xs text-[#70213F] dark:text-[#E878A0] hover:bg-rose-50 dark:hover:bg-[#30232D] rounded-lg transition-colors flex items-center gap-1.5 font-semibold"
-                  >
-                    <LogIn className="w-3.5 h-3.5" />
-                    Entrar com Outra Conta
-                  </button>
-
                   <button
                     onClick={() => {
                       setShowLandingPage(false);

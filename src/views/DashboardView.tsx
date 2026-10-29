@@ -17,6 +17,7 @@ import {
   CreditCard,
   UtensilsCrossed
 } from 'lucide-react';
+import { FloatingBabyDevelopment } from '../components/FloatingBabyDevelopment';
 
 export const DashboardView: React.FC = () => {
   const {
@@ -163,16 +164,25 @@ export const DashboardView: React.FC = () => {
               </button>
             </div>
 
-            <div className="text-center py-4">
-              <div className="w-24 h-24 mx-auto rounded-full bg-[#F8E7ED]/70 dark:bg-[#30232D] flex items-center justify-center text-5xl mb-3 shadow-inner">
-                {getFruitIcon(calculatedWeek)}
+            <div className="text-center py-2 flex flex-col items-center">
+              {/* Realistic Animated Floating Baby in the Womb */}
+              <FloatingBabyDevelopment
+                week={calculatedWeek}
+                size="standard"
+                showDetailsBadge={false}
+                showHeartbeatSound={true}
+                className="my-1"
+              />
+
+              {/* Equivalence and Developmental Milestone */}
+              <div className="mt-3 flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-[#FCE4EC] dark:bg-[#30232D] border border-rose-200 dark:border-[#493642] text-xs font-bold text-[#A83260] dark:text-[#E878A0] shadow-xs">
+                <span>{getFruitIcon(calculatedWeek)}</span>
+                <span>Equivalente: {currentWeekInfo.babySizeComparison}</span>
               </div>
-              <h3 className="font-serif-accent font-bold text-xl sm:text-2xl text-[#30232A] dark:text-[#FFF5F8]">
-                {currentWeekInfo.babySizeComparison}
-              </h3>
-              <p className="text-xs text-[#796A72] dark:text-[#C8B8C1] mt-1 font-medium">
+
+              <h3 className="font-serif-accent font-bold text-lg sm:text-xl text-[#30232A] dark:text-[#FFF5F8] mt-2">
                 {currentWeekInfo.milestoneTitle}
-              </p>
+              </h3>
             </div>
           </div>
 
