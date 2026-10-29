@@ -1,0 +1,851 @@
+# MASTER PROMPT V2 — MÃE SERENA
+## Premium Angolan Pregnancy Care SaaS | Interactive UI | Manual Payment Approval
+
+You are an elite SaaS product designer, senior full-stack engineer, creative developer, UX architect, and digital health product specialist.
+
+Build a polished, fully interactive pregnancy-care SaaS platform called "Mãe Serena", designed specifically for the Angolan market.
+
+The experience should combine the warmth and simplicity of a premium women's health application with the bold visual creativity, cursor interactions, smooth transitions, and immersive web design found on modern motorsport driver portfolio websites, such as Lando Norris's official website.
+
+Use those websites as high-level inspiration for motion, interaction, and visual energy only. Do not copy their branding, copyrighted assets, layouts, or identity.
+
+IMPORTANT: Build a real application, not just a static landing page.
+
+All visible user-facing content must be written in Portuguese, suitable for users in Angola. This includes onboarding questions, forms, navigation, buttons, payment instructions, subscription plans, reminders, validation messages, notifications, and educational content.
+
+Technical code, component names, and developer documentation may be in English.
+
+---
+
+# 1. PRODUCT VISION
+
+Product name: Mãe Serena
+
+Portuguese tagline:
+"A tua gravidez, acompanhada com carinho."
+
+Core promise:
+"Organiza a tua gravidez, acompanha cada fase do teu bebé e mantém as consultas e os lembretes importantes sempre por perto."
+
+Target market: Angola.
+
+Currency: Angolan kwanza (Kz).
+
+Primary platform: Responsive web application, optimized for mobile, tablet, and desktop.
+
+The product must feel elegant, emotional, interactive, trustworthy, modern, and easy to navigate.
+
+Build an original brand identity with a distinctive visual personality.
+
+---
+
+# 2. DESIGN SYSTEM
+
+Use a premium deep-rose and white visual system.
+
+Primary rose: #A83260
+Dark burgundy: #70213F
+Soft blush: #F8E7ED
+Warm white: #FFFCFD
+Neutral background: #F6F2F4
+Primary text: #30232A
+Muted text: #796A72
+Success: #367C60
+Warning: #B7791F
+Error: #B83245
+
+Dark mode:
+- Background: #171317
+- Surface: #241C23
+- Elevated surface: #30232D
+- Primary accent: #E878A0
+- Primary text: #FFF5F8
+- Secondary text: #C8B8C1
+
+Create a consistent design system with reusable components, spacing, typography, shadows, borders, icons, transitions, and accessible interaction states.
+
+Use refined typography, generous whitespace, large visual sections, asymmetrical compositions where appropriate, tasteful gradients, and soft rounded cards.
+
+The result should resemble a premium digital product studio's work rather than a generic template.
+
+---
+
+# 3. CREATIVE INTERACTION AND FLOATING PILL
+
+This is a signature feature of the application.
+
+Create a beautiful, three-dimensional, capsule-shaped pill illustration that floats around the user's cursor on desktop.
+
+The pill should:
+- Have an elegant two-tone deep-rose and white design.
+- Look like a stylized wellness capsule, not a realistic medication.
+- Float smoothly near the cursor.
+- Follow cursor movement with gentle inertia and spring-like motion.
+- Tilt and rotate slightly according to movement direction.
+- Have subtle depth, shadows, and lighting.
+- React to hovering over interactive cards and buttons.
+- Return smoothly to its resting position when the cursor stops.
+- Transition into a gentle floating animation when idle.
+- Have reduced motion or be disabled when the user prefers reduced motion.
+
+On mobile, where there is no cursor, replace cursor tracking with a gentle ambient floating animation and touch-responsive micro-interactions.
+
+The pill must never obstruct text, buttons, form fields, or accessibility controls.
+
+Use performant animation techniques such as CSS transforms, requestAnimationFrame where appropriate, and lightweight animation libraries if supported.
+
+Avoid excessive motion and unnecessary CPU usage.
+
+The capsule is a decorative brand mascot and must not be presented as a medication recommendation.
+
+Create additional subtle interactions:
+- Cards lift slightly on hover.
+- Buttons have tactile hover and press states.
+- Sections reveal themselves smoothly as users scroll.
+- Page transitions feel fluid.
+- Progress indicators animate when updated.
+- The onboarding progress bar transitions smoothly.
+- Calendar events respond visually to hover and selection.
+- The floating action button opens an elegant quick-action menu.
+
+All animations must remain usable on low-powered mobile devices.
+
+---
+
+# 4. FIRST SCREEN: LOGIN AND ACCOUNT CREATION
+
+When a visitor opens the application, display a polished welcome and authentication screen.
+
+The initial screen must contain:
+- The Mãe Serena logo.
+- A short Portuguese welcome message.
+- A premium pregnancy-themed illustration.
+- The animated floating capsule on supported desktop devices.
+- A primary button: "Criar conta".
+- A secondary button: "Iniciar sessão".
+- A password recovery link: "Esqueci-me da palavra-passe".
+- Links to privacy and terms.
+
+Do not force visitors to navigate through a marketing landing page before they can access the login screen.
+
+The first experience must immediately communicate trust, simplicity, and care.
+
+The primary button opens the four-question onboarding flow for new users.
+
+The login button opens the existing-user authentication form.
+
+Returning users must not be forced to repeat onboarding unnecessarily.
+
+---
+
+# 5. FOUR-QUESTION ONBOARDING
+
+After a new visitor clicks "Criar conta", show a beautiful, step-by-step onboarding wizard containing exactly four initial questions.
+
+Display one question per screen or card.
+
+Show a clear progress indicator such as:
+"Pergunta 1 de 4".
+
+Include the buttons:
+"Voltar"
+"Continuar"
+"Terminar perguntas"
+
+Allow users to go back and change previous answers.
+
+Question 1:
+"Em que fase estás neste momento?"
+
+Options:
+- "Estou grávida."
+- "Estou a planear uma gravidez."
+- "Quero preparar-me para uma futura gravidez."
+
+Question 2:
+"Sabes de quantas semanas estás grávida?"
+
+Only show this question as a pregnancy-specific question when the user selects "Estou grávida".
+
+Options:
+- "Sim, sei as semanas."
+- "Tenho uma data provável do parto."
+- "Ainda não sei."
+
+For other paths, replace the pregnancy-specific question with an appropriate alternative, such as:
+"Qual é o teu principal objetivo?"
+Options:
+- "Preparar consultas."
+- "Aprender sobre saúde materna."
+- "Organizar os meus cuidados."
+
+Question 3:
+"O que gostarias de acompanhar na aplicação?"
+
+Allow multiple selections:
+- "Desenvolvimento do bebé."
+- "Consultas pré-natais."
+- "Lembretes de medicamentos prescritos."
+- "Calendário e compromissos."
+- "Guias e orientações."
+- "Bem-estar diário."
+
+Question 4:
+"Como preferes receber os teus lembretes?"
+
+Options:
+- "Notificações no dispositivo, quando disponíveis."
+- "Lembretes dentro da aplicação."
+- "Quero configurar isso mais tarde."
+
+Use conditional wording where necessary so users who are not pregnant do not receive misleading pregnancy-specific questions.
+
+Do not collect unnecessary sensitive information during these initial four questions.
+
+Store the answers as onboarding preferences associated with the user's account after account creation.
+
+After the fourth question, show a friendly transition screen:
+
+"Perfeito! Vamos preparar o teu espaço de cuidado."
+
+Primary button:
+"Continuar para os meus dados"
+
+---
+
+# 6. PERSONAL DETAILS AND ACCOUNT CREATION
+
+Only after completing the four onboarding questions, show the personal registration form.
+
+Request:
+- Nome completo.
+- Endereço de e-mail.
+- Número de telefone, including Angola's +244 country code.
+- Palavra-passe.
+- Confirmar palavra-passe.
+
+Include a checkbox for accepting the terms and privacy policy.
+
+Use secure authentication and server-side validation.
+
+Provide:
+- Password visibility toggle.
+- Password strength feedback.
+- Clear field-level validation.
+- Helpful Portuguese error messages.
+- Duplicate-account handling.
+- Email verification where supported.
+- Password recovery.
+
+Never store plain-text passwords.
+
+After successful account creation, direct the user to the pregnancy profile setup flow.
+
+Ask only for information appropriate to the user's selected onboarding path.
+
+For pregnant users, allow entry of:
+- Last menstrual period, if known.
+- Estimated due date, if known.
+- Current pregnancy week, if already confirmed.
+- Whether the date was estimated or confirmed by a healthcare professional.
+
+Allow users to skip nonessential fields and complete them later.
+
+Explain that estimated pregnancy dates may change following clinical assessment.
+
+Do not invent a pregnancy week when insufficient information is available.
+
+---
+
+# 7. APPLICATION DASHBOARD
+
+After onboarding and profile setup, show a personalized dashboard.
+
+Example welcome:
+"Olá! Este é o teu espaço de cuidado."
+
+If a first name is available:
+"Olá, [primeiro nome]!"
+
+The dashboard should include:
+- Pregnancy progress, when applicable.
+- A weekly development card.
+- Upcoming appointments.
+- Today's reminders.
+- Medication reminder status.
+- A daily checklist.
+- A preview of educational guides.
+- A calendar shortcut.
+- A clear subscription status indicator.
+
+For users planning pregnancy, show a preparation dashboard instead of pregnancy-week data.
+
+For users who have not provided sufficient information, show a friendly profile-completion card.
+
+Never show fabricated personal information.
+
+Use elegant cards, subtle animations, clear headings, and meaningful actions.
+
+---
+
+# 8. MAIN NAVIGATION
+
+Create a compact navigation system.
+
+Mobile bottom navigation:
+- Início.
+- Gravidez.
+- Calendário.
+- Guias.
+- Perfil.
+
+Provide a dedicated reminders view accessible from the dashboard and the floating action menu.
+
+Desktop navigation may use a refined sidebar or top navigation.
+
+Include a floating action button that opens:
+- "Adicionar lembrete".
+- "Marcar consulta".
+- "Registar nota".
+- "Registar toma".
+
+Every visible button must perform its intended action.
+
+Do not create decorative buttons that do nothing.
+
+---
+
+# 9. PREGNANCY TRACKING
+
+Build a pregnancy timeline with:
+- Pregnancy week and day.
+- Estimated due date.
+- First, second, and third trimester.
+- Weekly educational content.
+- Baby development illustrations.
+- Personal notes.
+- Pregnancy milestones.
+- Questions to discuss during prenatal appointments.
+
+Provide a clear timeline view.
+
+Use medically reviewed, evidence-informed educational information.
+
+Avoid unsupported claims and do not imply that all pregnancies develop identically.
+
+For users who are not pregnant, show appropriate preparation content instead.
+
+---
+
+# 10. CALENDAR AND APPOINTMENTS
+
+Create an interactive monthly and weekly calendar.
+
+Users can:
+- Navigate between dates.
+- Create appointments.
+- Edit appointments.
+- Delete appointments.
+- Set reminders.
+- Add location and notes.
+- View upcoming events.
+- Mark tasks as completed.
+- Review previous appointments.
+
+Appointment fields:
+- Title.
+- Date.
+- Time.
+- Clinic or professional, optional.
+- Location, optional.
+- Notes, optional.
+- Reminder preferences.
+
+Use the Africa/Luanda timezone.
+
+Store events persistently in the authenticated user's account.
+
+---
+
+# 11. MEDICATION REMINDERS
+
+Build a medication organization feature.
+
+Allow users to enter:
+- Medication name.
+- Instructions as prescribed.
+- Scheduled times.
+- Frequency.
+- Start and end dates, when applicable.
+- Reminder preferences.
+
+Allow users to:
+- Mark a dose as taken.
+- Mark a dose as skipped.
+- View medication history.
+- Edit or deactivate reminders.
+
+Do not prescribe medication, suggest doses, or recommend changing treatment.
+
+Include:
+"Esta ferramenta ajuda-te a organizar as tomas e não substitui a orientação de um profissional de saúde."
+
+Implement notifications only through configured and supported services.
+
+Provide in-app reminders when push notifications are unavailable.
+
+Never claim that an alarm will work while the browser or device is closed unless the actual notification mechanism supports it.
+
+---
+
+# 12. EDUCATIONAL GUIDES
+
+Create a searchable Portuguese guide library.
+
+Categories:
+- Primeiro trimestre.
+- Segundo trimestre.
+- Terceiro trimestre.
+- Consultas pré-natais.
+- Alimentação e hidratação.
+- Sono e descanso.
+- Preparação para o parto.
+- Mala de maternidade.
+- Pós-parto.
+- Amamentação.
+- Saúde emocional.
+- Sinais de alerta.
+
+Each guide should contain:
+- Title.
+- Introduction.
+- Readable sections.
+- Practical suggestions.
+- Questions to ask a healthcare professional.
+- Medical references where available.
+- Review date.
+
+Do not invent citations or professional endorsements.
+
+Include an accessible emergency-information page that explains when serious symptoms require urgent medical assessment.
+
+---
+
+# 13. SUBSCRIPTION PLANS IN ANGOLA
+
+Create three paid subscription plans.
+
+Monthly:
+"3.000 Kz / mês"
+
+Quarterly:
+"9.000 Kz / 3 meses"
+
+Annual:
+"30.000 Kz / ano" as a suggested promotional price.
+
+The standard annual equivalent is 36.000 Kz.
+
+The annual promotional price represents a saving of 6.000 Kz compared with twelve monthly payments.
+
+Make the annual price configurable by an administrator.
+
+Clearly explain:
+- Subscription duration.
+- Total amount payable.
+- Renewal conditions.
+- Cancellation conditions.
+- Included premium features.
+- Current payment status.
+
+Use the Angolan kwanza throughout the application.
+
+Never display foreign currency as the primary subscription currency.
+
+Do not activate premium access until the payment has been verified and approved.
+
+---
+
+# 14. MULTICAIXA EXPRESS AND MANUAL PAYMENT APPROVAL
+
+Implement a payment workflow designed for users in Angola.
+
+IMPORTANT: The first implementation must support manual payment verification.
+
+Do not pretend that entering a Multicaixa Express number creates an automatic payment API connection.
+
+Use the following configurable payment details, stored securely in backend configuration and exposed only on the necessary payment instruction screen:
+
+Payment method: Multicaixa Express.
+
+Configured receiving number: 928 230 620.
+
+Alternative payment method: Bank transfer.
+
+Configured IBAN: 0006.0000.9641.0541.3010.7.
+
+The administrator must be able to update these details through a protected administrative configuration page.
+
+Do not place payment account details in public landing pages, public source repositories, analytics events, or application logs.
+
+Before production, the business owner must confirm that these receiving details are authorized for commercial collections and that the relevant payment arrangements permit this use.
+
+## PAYMENT USER FLOW
+
+Step 1:
+The user chooses a subscription plan.
+
+Step 2:
+The application creates a unique payment order on the backend.
+
+Step 3:
+Show the payment instructions in Portuguese.
+
+Example:
+
+"Quase lá! Conclui o pagamento para ativares o teu plano."
+
+Show:
+- Selected plan.
+- Amount payable in Kz.
+- Payment method.
+- Configured receiving details.
+- Unique payment reference.
+- Clear instructions to complete the payment using the supported method.
+
+Step 4:
+The user completes the payment externally using the appropriate Multicaixa Express process or bank transfer.
+
+Step 5:
+The user returns to the application and submits a payment confirmation form.
+
+Form fields:
+- Payment reference.
+- Payment method.
+- Transaction reference, if available.
+- Payment date.
+- Amount paid.
+- Optional proof of payment upload, if secure file storage is configured.
+
+Primary button:
+"Enviar comprovativo para aprovação"
+
+Step 6:
+Create a payment record with status:
+"Pendente de aprovação"
+
+Step 7:
+Show the user a confirmation screen:
+
+"Recebemos o teu pedido de confirmação."
+
+"Vamos verificar o pagamento. O teu plano será ativado depois da aprovação."
+
+Do not activate premium access at this stage.
+
+Step 8:
+An authorized administrator reviews the payment in the protected admin dashboard.
+
+Step 9:
+The administrator can:
+- Approve payment.
+- Reject payment.
+- Request additional information.
+- Add an internal administrative note.
+
+Step 10:
+On approval, the backend verifies that the payment order is valid and has not already been processed, then activates the subscription.
+
+Step 11:
+On rejection, the subscription remains inactive and the user sees a clear explanation or next steps.
+
+Prevent duplicate approvals, unauthorized payment manipulation, and reuse of payment references.
+
+Use an auditable payment state machine:
+
+- Awaiting payment.
+- Pending verification.
+- Approved.
+- Rejected.
+- Cancelled.
+- Expired.
+
+All payment status changes must be validated server-side.
+
+Only authorized administrators can approve or reject payments.
+
+A user must never be able to activate their own subscription by editing frontend state or sending a fabricated request.
+
+## PAYMENT INTEGRATION BOUNDARY
+
+Create a modular payment adapter so a genuine provider API can be integrated later.
+
+Before enabling automatic Multicaixa Express payment confirmation, verify the availability of an authorized provider, the correct API documentation, merchant onboarding requirements, and credentials.
+
+Never fabricate API endpoints, payment webhooks, transaction identifiers, or successful payment responses.
+
+For the initial release, the manual approval workflow must work end-to-end with real database persistence.
+
+Clearly distinguish manual approval from automatic payment processing.
+
+---
+
+# 15. ADMINISTRATIVE DASHBOARD
+
+Create a protected admin dashboard.
+
+Only authorized administrator accounts may access it.
+
+Include:
+- Pending payment queue.
+- Payment details.
+- Transaction references.
+- Submitted proof of payment, where available.
+- Approve and reject actions.
+- Payment history.
+- Active subscriptions.
+- Expired subscriptions.
+- User account management.
+- Plan and price configuration.
+- Educational guide management.
+- Application settings.
+
+Show a clear warning before approving a payment.
+
+Require confirmation for irreversible or sensitive actions.
+
+Record relevant administrative actions in an audit trail.
+
+Never grant administrator access based on a frontend-only role value.
+
+Use server-side role verification.
+
+Restrict proof-of-payment files to authorized users and administrators. Validate uploads, limit file size, and use secure private storage.
+
+---
+
+# 16. PAYMENT AND SUBSCRIPTION SECURITY
+
+Implement:
+- Server-side subscription access checks.
+- Authenticated payment submissions.
+- Unique payment order IDs.
+- Duplicate-payment prevention.
+- Safe file uploads.
+- Strict administrator authorization.
+- Server-side price verification.
+- Protected payment configuration.
+- Secure database rules.
+- Auditable state transitions.
+
+The server must calculate the amount based on the selected plan rather than trusting a user-submitted amount.
+
+Never expose private API credentials.
+
+Do not collect or store banking passwords, Multicaixa PINs, one-time passwords, or card security codes.
+
+Never ask a user to provide their banking login credentials inside the application.
+
+---
+
+# 17. DARK MODE
+
+Implement a complete light and dark theme.
+
+Users can select:
+- "Modo claro".
+- "Modo escuro".
+- "Seguir o dispositivo".
+
+Persist the preference.
+
+Ensure that calendars, modals, forms, onboarding, payment screens, and the floating pill all look correct in both themes.
+
+Maintain readable contrast and accessible focus states.
+
+---
+
+# 18. TECHNICAL IMPLEMENTATION
+
+Use a maintainable, production-oriented architecture.
+
+Preferred stack:
+- React.
+- TypeScript.
+- Tailwind CSS or an equivalent styling system.
+- Reusable component architecture.
+- Firebase Authentication.
+- Cloud Firestore.
+- Firebase Cloud Functions or equivalent trusted server-side functions.
+- Private file storage for payment proofs, when configured.
+- A notification service when available.
+
+Adapt to the actual Google AI Studio runtime if another supported stack is more appropriate.
+
+Implement real navigation, form validation, persistent storage, authentication, payment records, subscription gating, and administrator permissions.
+
+Use secure environment variables for secrets.
+
+Do not hardcode simulated database responses as if they were persistent production data.
+
+If a service requires credentials, explain the exact configuration needed and provide a clearly labeled development fallback.
+
+---
+
+# 19. DATABASE STRUCTURE
+
+Create appropriate collections or tables for:
+
+Users:
+- User ID.
+- Profile information.
+- Onboarding answers.
+- Preferences.
+- Roles.
+- Timestamps.
+
+Pregnancy profiles:
+- Pregnancy dates.
+- Estimated due date.
+- Tracking preferences.
+- Notes.
+
+Appointments:
+- User ID.
+- Date and time.
+- Details.
+- Reminder settings.
+
+Medication reminders:
+- User ID.
+- Medication label.
+- User-entered instructions.
+- Schedule.
+- Status.
+
+Personal reminders:
+- User ID.
+- Title.
+- Date and time.
+- Completion status.
+
+Educational guides:
+- Title.
+- Category.
+- Content.
+- Publication status.
+- Review metadata.
+
+Subscription plans:
+- Plan ID.
+- Price in Kz.
+- Billing period.
+- Published status.
+
+Payment orders:
+- Unique order ID.
+- User ID.
+- Plan ID.
+- Server-calculated amount.
+- Currency.
+- Payment method.
+- Payment reference.
+- Verification status.
+- Timestamps.
+
+Payment submissions:
+- Payment order ID.
+- Transaction reference.
+- Optional secure proof file reference.
+- User comments.
+- Review status.
+
+Administrative audit events:
+- Administrator ID.
+- Action.
+- Payment order ID, when applicable.
+- Timestamp.
+- Relevant non-sensitive metadata.
+
+Apply strict ownership and authorization rules to all private records.
+
+---
+
+# 20. PRIVACY AND RESPONSIBLE HEALTHCARE
+
+Treat pregnancy-related records as sensitive personal information.
+
+Collect only necessary information.
+
+Provide clear privacy notices and appropriate user consent.
+
+Keep user records private by default.
+
+Do not sell personal health information.
+
+Do not expose private records through public links or analytics.
+
+Do not provide individualized diagnoses or medication prescriptions.
+
+Clearly explain that the application supports organization and education and does not replace prenatal consultations.
+
+---
+
+# 21. QUALITY ASSURANCE
+
+Before declaring the application complete, verify the following workflows:
+
+1. A new user can create an account.
+2. The new user answers exactly four initial onboarding questions.
+3. The user then enters their personal registration details.
+4. The user can complete or skip nonessential pregnancy profile fields.
+5. The user reaches the appropriate personalized dashboard.
+6. The user can create and edit appointments.
+7. The user can create medication reminders.
+8. The user can navigate the educational guides.
+9. The user can switch themes.
+10. The user can select a subscription plan.
+11. The user can submit a payment for manual approval.
+12. The user sees a pending status while the payment is reviewed.
+13. An authorized administrator can approve or reject the payment.
+14. Premium access becomes active only after valid approval.
+15. Unauthorized users cannot access administrative actions.
+16. Duplicate payment approvals are prevented.
+17. The floating pill behaves correctly on desktop and mobile.
+18. Reduced-motion preferences are respected.
+19. The application remains responsive on small screens.
+20. No visible button is broken or misleading.
+
+Do not mark any workflow as verified unless it has actually been tested.
+
+---
+
+# 22. BUILD INSTRUCTIONS
+
+Build the actual application now.
+
+First create:
+- The visual design system.
+- The login and account creation screen.
+- The four-question onboarding wizard.
+- The personal registration flow.
+- The responsive dashboard.
+- The floating interactive pill.
+- The main navigation.
+
+Then implement:
+- Pregnancy tracking.
+- Calendar and reminders.
+- Educational guides.
+- Subscription plans.
+- Manual payment submission and administrator approval.
+- Persistent storage.
+- Authentication and server-side security.
+
+Prioritize a visually impressive, functional first version rather than producing many incomplete screens.
+
+If the entire application cannot be completed in one generation, finish a coherent working milestone, preserve the project structure, and continue implementing the remaining modules without replacing working features with static mockups.
+
+Deliver an original, elegant, interactive Angolan pregnancy-care SaaS with Portuguese user-facing content, secure manual payment approval, and a memorable floating capsule interaction.
+
+The final application should be suitable for continued testing, integration, and deployment after the required services and credentials have been configured.

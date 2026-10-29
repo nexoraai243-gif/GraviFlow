@@ -1,0 +1,8 @@
+{
+  "name": "GraviFlow — Cuidados na Gravidez",
+  "description": "Plataforma de saúde materna e acompanhamento pré-natal personalizada para grávidas em Angola, com rastreio gestacional, calendário, lembretes de medicação, pagamentos Multicaixa Express e mascote interativa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
