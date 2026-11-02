@@ -291,30 +291,20 @@ export const WelcomeAuthScreen: React.FC<WelcomeAuthScreenProps> = ({
             </button>
 
             <div className="text-center mb-6">
-              <MaeSerenaLogo size="md" className="justify-center mb-2" />
+              <button
+                type="button"
+                onClick={handleQuickDevLogin}
+                className="cursor-default focus:outline-hidden"
+                title="GraviFlow"
+              >
+                <MaeSerenaLogo size="md" className="justify-center mb-2" />
+              </button>
               <h2 className="font-serif-accent font-bold text-xl text-[#70213F] dark:text-[#FFF5F8]">
                 Iniciar Sessão no GraviFlow
               </h2>
               <p className="text-xs text-[#796A72] dark:text-[#C8B8C1] mt-1">
                 Introduz os teus dados de acesso para entrar.
               </p>
-            </div>
-
-            {/* Developer Fast-Access Banner */}
-            <div className="mb-5 p-3 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-amber-700 dark:text-amber-400" />
-                <span className="font-semibold text-amber-900 dark:text-amber-200">
-                  Conta do Desenvolvedor
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={handleQuickDevLogin}
-                className="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-bold text-[11px] hover:bg-amber-700 transition-colors shadow-xs"
-              >
-                Preencher Auto
-              </button>
             </div>
 
             {loginError && (

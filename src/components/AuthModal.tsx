@@ -152,7 +152,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
         {/* Logo and App Title */}
         <div className="flex flex-col items-center text-center mb-6">
-          <MaeSerenaLogo size="lg" className="mb-2" />
+          <button
+            type="button"
+            onClick={handleDeveloperQuickFill}
+            title="GraviFlow"
+            className="cursor-default focus:outline-hidden"
+          >
+            <MaeSerenaLogo size="lg" className="mb-2" />
+          </button>
           <h2 className="font-serif-accent font-bold text-2xl text-[#30232A] dark:text-[#FFF5F8] mt-1">
             {mode === 'login'
               ? 'Entrar no GraviFlow'
@@ -166,26 +173,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               : registerStep === 1
               ? 'Responde a este questionário rápido antes de colocar os teus dados'
               : 'Último passo: preenche os teus dados para começar o teste'}
-          </p>
-        </div>
-
-        {/* Developer Account Badge & Instant Fill */}
-        <div className="mb-5 bg-gradient-to-r from-rose-50 to-pink-50 dark:from-[#26101D] dark:to-[#1A0A14] border border-rose-200 dark:border-[#4A1F35] p-3 rounded-2xl">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-semibold text-[#A83260] dark:text-[#E878A0] flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4" />
-              Conta do Desenvolvedor
-            </span>
-            <button
-              type="button"
-              onClick={handleDeveloperQuickFill}
-              className="text-[11px] font-bold bg-[#A83260] text-white px-2.5 py-1 rounded-lg hover:bg-[#7D2347] transition-colors shadow-xs"
-            >
-              Preencher Auto
-            </button>
-          </div>
-          <p className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1">
-            chillplaces9@gmail.com (Acesso total de administrador)
           </p>
         </div>
 
