@@ -8,8 +8,7 @@ import {
   CheckCircle,
   Lock,
   ArrowRight,
-  Filter,
-  AlertTriangle
+  Filter
 } from 'lucide-react';
 import { EducationalGuide } from '../types';
 
@@ -82,17 +81,6 @@ export const GuidesView: React.FC = () => {
             placeholder="Pesquisar guias, sintomas, nutrição..."
             className="w-full pl-9 pr-4 py-2.5 rounded-2xl border border-[#E0CBD3] dark:border-[#493642] bg-[#FFFCFD] dark:bg-[#30232D] text-xs focus:border-[#A83260]"
           />
-        </div>
-      </div>
-
-      {/* Safety Notice Banner */}
-      <div className="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 p-4 rounded-3xl text-xs text-rose-900 dark:text-rose-200 flex items-start gap-3 shadow-xs">
-        <AlertTriangle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
-        <div>
-          <strong className="font-semibold block mb-0.5">Aviso Médico Crucial:</strong>
-          <p className="leading-relaxed">
-            Os conteúdos desta aplicação são informativos e não substituem uma consulta médica presencial. Em caso de sangramento, febre alta, dor abdominal severa ou ausência de movimentos fetais, procure uma maternidade de urgência imediatamente.
-          </p>
         </div>
       </div>
 

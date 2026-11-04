@@ -3,7 +3,6 @@ import { useApp } from '../context/AppContext';
 import {
   Pill,
   Clock,
-  AlertCircle,
   CheckCircle2,
   XCircle,
   Plus,
@@ -61,17 +60,6 @@ export const RemindersView: React.FC = () => {
               Adicionar Lembrete
             </button>
           )}
-        </div>
-      </div>
-
-      {/* Mandatory Medical Disclaimer Banner */}
-      <div className="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 p-4 rounded-3xl text-xs text-amber-900 dark:text-amber-200 flex items-start gap-3 shadow-xs">
-        <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-        <div>
-          <strong className="font-semibold block mb-0.5">Aviso Médico Crucial:</strong>
-          <p className="leading-relaxed">
-            Esta funcionalidade ajuda-te a organizar as tomas. Não substitui a orientação de um profissional de saúde. Nunca inicie, altere ou interrompa qualquer medicamento sem receita e instrução do seu médico ou posto de saúde em Angola.
-          </p>
         </div>
       </div>
 

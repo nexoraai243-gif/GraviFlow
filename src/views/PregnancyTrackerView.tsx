@@ -20,9 +20,7 @@ export const PregnancyTrackerView: React.FC = () => {
   const {
     user,
     calculatedWeek,
-    daysRemaining,
-    dailyLog,
-    setActiveQuickModal
+    daysRemaining
   } = useApp();
 
   const [selectedWeek, setSelectedWeek] = useState<number>(calculatedWeek);
@@ -69,12 +67,6 @@ export const PregnancyTrackerView: React.FC = () => {
               className="text-xs font-bold px-3.5 py-2 rounded-xl bg-[#F8E7ED] hover:bg-[#F2D7E0] dark:bg-[#30232D] dark:hover:bg-[#3D2C39] text-[#A83260] dark:text-[#E878A0] transition-colors border border-rose-200 dark:border-[#493642]"
             >
               Ir para Semana Atual ({calculatedWeek})
-            </button>
-            <button
-              onClick={() => setActiveQuickModal('symptom')}
-              className="text-xs font-bold px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#7D2347] to-[#A83260] text-white shadow-md shadow-rose-900/20"
-            >
-              + Registar Diário
             </button>
           </div>
         </div>
@@ -287,49 +279,6 @@ export const PregnancyTrackerView: React.FC = () => {
             className="w-full px-3.5 py-2.5 rounded-2xl border border-[#E0CBD3] dark:border-[#493642] bg-[#FFFCFD] dark:bg-[#30232D] text-xs focus:border-[#A83260]"
           />
         </div>
-      </div>
-
-      {/* Today's Wellbeing Journal Entry Preview */}
-      <div className="bg-white dark:bg-[#241C23] border border-[#F0E4E9] dark:border-[#493642] p-6 rounded-3xl shadow-xs space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Activity className="w-5 h-5 text-indigo-600" />
-            <h3 className="font-serif-accent font-bold text-xl">Registo Diário de Hoje</h3>
-          </div>
-          <button
-            onClick={() => setActiveQuickModal('symptom')}
-            className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
-          >
-            Editar Diário
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-          <div className="p-3 rounded-2xl bg-[#FFFCFD] dark:bg-[#30232D] border border-neutral-100 dark:border-[#493642]">
-            <span className="text-neutral-400 block text-[10px] uppercase font-bold">Humor Geral</span>
-            <span className="font-bold text-sm capitalize text-[#30232A] dark:text-[#FFF5F8]">
-              {dailyLog.mood}
-            </span>
-          </div>
-          <div className="p-3 rounded-2xl bg-[#FFFCFD] dark:bg-[#30232D] border border-neutral-100 dark:border-[#493642]">
-            <span className="text-neutral-400 block text-[10px] uppercase font-bold">Energia</span>
-            <span className="font-bold text-sm text-[#30232A] dark:text-[#FFF5F8]">
-              {dailyLog.energyLevel} de 5
-            </span>
-          </div>
-          <div className="p-3 rounded-2xl bg-[#FFFCFD] dark:bg-[#30232D] border border-neutral-100 dark:border-[#493642]">
-            <span className="text-neutral-400 block text-[10px] uppercase font-bold">Hidratação</span>
-            <span className="font-bold text-sm text-[#30232A] dark:text-[#FFF5F8]">
-              {dailyLog.waterGlasses * 250} ml ({dailyLog.waterGlasses} copos)
-            </span>
-          </div>
-        </div>
-
-        {dailyLog.notes && (
-          <p className="text-xs text-[#796A72] dark:text-[#C8B8C1] italic bg-neutral-50 dark:bg-[#30232D] p-3 rounded-xl border border-neutral-100 dark:border-[#493642]">
-            "{dailyLog.notes}"
-          </p>
-        )}
       </div>
     </div>
   );

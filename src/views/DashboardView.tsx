@@ -14,8 +14,7 @@ import {
   ShieldCheck,
   Plus,
   HelpCircle,
-  CreditCard,
-  UtensilsCrossed
+  CreditCard
 } from 'lucide-react';
 import { FloatingBabyDevelopment } from '../components/FloatingBabyDevelopment';
 
@@ -33,8 +32,6 @@ export const DashboardView: React.FC = () => {
     toggleChecklistItem,
     setActiveTab,
     setActiveQuickModal,
-    setSelectedGuideForModal,
-    guides,
     trialDaysRemaining
   } = useApp();
 
@@ -384,75 +381,6 @@ export const DashboardView: React.FC = () => {
               <span className="text-xs font-medium text-[#30232A] dark:text-[#FFF5F8] flex-1">
                 {item.text}
               </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Maternal Recipes Highlight */}
-      <div className="bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-pink-500/10 dark:from-[#30232D] dark:to-[#241C23] border border-rose-200 dark:border-[#493642] p-6 rounded-3xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#70213F] to-[#A83260] text-white flex items-center justify-center text-2xl shadow-md shrink-0">
-            🍲
-          </div>
-          <div className="space-y-1">
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#A83260] dark:text-[#E878A0]">
-              Nova Aba Especial • Nutrição em Angola
-            </span>
-            <h3 className="font-serif-accent font-bold text-lg text-[#30232A] dark:text-[#FFF5F8]">
-              Receitas de Comidas para Grávidas
-            </h3>
-            <p className="text-xs text-[#796A72] dark:text-[#C8B8C1]">
-              Caldo de peixe fresco, mufete suave, sumo de múcua com vitamina C, papas anti-enjoo e cuidados obstétricos.
-            </p>
-          </div>
-        </div>
-        <button
-          onClick={() => setActiveTab('receitas')}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#70213F] to-[#A83260] text-white text-xs font-bold shadow-sm hover:opacity-95 transition-opacity flex items-center gap-1.5 self-start sm:self-center shrink-0 cursor-pointer"
-        >
-          <UtensilsCrossed className="w-3.5 h-3.5" />
-          <span>Ver Receitas</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </button>
-      </div>
-
-      {/* Highlighted Guides Preview */}
-      <div className="bg-[#F8E7ED]/50 dark:bg-[#30232D] border border-rose-200/80 dark:border-[#493642] p-6 rounded-3xl space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-[#A83260] dark:text-[#E878A0]" />
-            <h3 className="font-serif-accent font-bold text-lg text-[#30232A] dark:text-[#FFF5F8]">
-              Guias Recomendados para Esta Fase
-            </h3>
-          </div>
-          <button
-            onClick={() => setActiveTab('guias')}
-            className="text-xs font-bold text-[#A83260] dark:text-[#E878A0] hover:underline"
-          >
-            Ver todos ({guides.length})
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {guides.slice(0, 2).map(guide => (
-            <div
-              key={guide.id}
-              onClick={() => setSelectedGuideForModal(guide)}
-              className="bg-white dark:bg-[#241C23] p-4 rounded-2xl border border-neutral-100 dark:border-[#493642] shadow-xs cursor-pointer hover:shadow-md transition-shadow space-y-2"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#A83260] dark:text-[#E878A0]">
-                  {guide.category.replace('_', ' ')}
-                </span>
-                <span className="text-[10px] text-neutral-400">{guide.readTimeMinutes} min</span>
-              </div>
-              <h4 className="font-serif-accent font-bold text-sm text-[#30232A] dark:text-[#FFF5F8] line-clamp-1">
-                {guide.title}
-              </h4>
-              <p className="text-[11px] text-[#796A72] dark:text-[#C8B8C1] line-clamp-2">
-                {guide.shortIntro}
-              </p>
             </div>
           ))}
         </div>
